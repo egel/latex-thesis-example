@@ -12,7 +12,22 @@
 # these rules might exclude image files for figures etc.
 # *.ps
 # *.eps
-# *.pdf
+*.pdf
+
+# Editors files:
+*.sublime-workspace
+
+# HTML files:
+README.html
+
+# FreeMind files
+*.mm
+
+# Temporary folders
+temp/
+
+# Texmaker session files
+*.tks
 
 ## Bibliography auxiliary files (bibtex/biblatex/biber):
 *.bbl
