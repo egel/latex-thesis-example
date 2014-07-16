@@ -1,0 +1,194 @@
+\documentclass[12pt]{uekthesis}
+\usepackage{polski}
+\usepackage[utf8]{inputenc}
+
+% zdefiniowane kolory
+\definecolor{wine}{RGB}{149,56,56}
+\definecolor{wine-stain}{RGB}{200,125,125}
+\definecolor{grass-green}{RGB}{53,161,103}
+\definecolor{ocean-blue}{RGB}{9,63,97}
+
+% dodatkowe pakiety
+\usepackage{enumerate}     %
+\usepackage{multirow}      % pakiet dla tabel wielowierszowych
+\usepackage{caption}       % pakiet dla podpisów np: dla lstlintings
+\usepackage{listings}      % pakiet dla kodów zródłowych
+\usepackage{lipsum}        % pakiet wyświetlający "Lorem impsum..."
+\usepackage{longtable}     % pakiet wielostronicowych tabel
+
+
+\lstloadlanguages{TeX}
+\lstset{
+  literate={ą}{{\k{a}}}1
+           {ć}{{\'c}}1
+           {ę}{{\k{e}}}1
+           {ó}{{\'o}}1
+           {ń}{{\'n}}1
+           {ł}{{\l{}}}1
+           {ś}{{\'s}}1
+           {ź}{{\'z}}1
+           {ż}{{\.z}}1
+           {Ą}{{\k{A}}}1
+           {Ć}{{\'C}}1
+           {Ę}{{\k{E}}}1
+           {Ó}{{\'O}}1
+           {Ń}{{\'N}}1
+           {Ł}{{\L{}}}1
+           {Ś}{{\'S}}1
+           {Ź}{{\'Z}}1
+           {Ż}{{\.Z}}1,
+  language=bash,
+  captionpos=b,
+  tabsize=3,
+  frame=lines,
+  keywordstyle=\color{blue},
+  commentstyle=\color{darkgreen},
+  stringstyle=\color{red},
+  numbers=left,
+  numberstyle=\textnormal,
+  numbersep=12pt,
+  breaklines=true,
+  showstringspaces=false,
+  basicstyle=\ttfamily,
+  emph={label}
+}
+
+%---------------------------------------------------------------------------
+
+\theoremstyle{plain}
+\newtheorem{thm}{Theorem}[section]
+\newtheorem{lem}[thm]{Lemma}
+\newtheorem{prop}[thm]{Proposition}
+\newtheorem*{cor}{Corollary}
+
+\theoremstyle{definition}
+\newtheorem{defn}[thm]{Definition}
+\newtheorem{conj}{Conjecture}[section]
+\newtheorem{exmp}{Przykład}[section]
+
+\theoremstyle{remark}
+\newtheorem*{rem}{Remark}
+\newtheorem*{note}{Note}
+
+%------------------------------Zaawansowane--------------------------------
+\author{Maciej Sypień}
+\shortAuthor{M. Sypień}
+
+\titlePL{Jak przygotować wspaniałą pracę dyplomową \\[2mm] wraz z~systemem \LaTeXe}
+\titleEN{How to perpare a beautiful thisis in \LaTeXe}
+
+\shortTitlePL{Praca dyplomowa w systemie \LaTeXe} % skrócona wersja tytułu jeśli jest bardzo długi
+\shortTitleEN{Preparing thesis in \LaTeXe}
+
+\thesisType{Praca dyplomowa}
+%\thesistype{Master of Science Thesis}
+
+\supervisor{dr hab. Jan Iksiński, prof. n.}
+%\supervisor{Jan Kowalski PhD, DSc}
+
+\degreeprogramme{Informatyka Stosowana}
+%\degreeprogramme{Applied Computer Science}
+
+\date{2014}
+
+%\department{Katedra Informatyki Stosowanej}
+%\department{Department of Applied Computer Science}
+
+\department{Wydział Zarządzania}
+%\faculty{Wydział Elektrotechniki, Automatyki,\protect\\[-1mm] Informatyki i Inżynierii Biomedycznej}
+%\faculty{Faculty of Electrical Engineering, Automatics, Computer Science and Biomedical Engineering}
+
+\acknowledgements{Dla moich rodziców oraz najbliższych przyjaciół za niezłomną wiarę w~moje zwycięstwo.}
+
+\setlength{\cftsecnumwidth}{10mm}
+
+%---------------------------------------------------------------------------
+
+\hypersetup{
+  %bookmarks=true,         % pokaż/ukryj pasek zakładek w trakcie wyświetlania dokumentu Acrobatem
+  unicode=true,           % używać znaków z alfabetów niełacińskich zakładkach Acrobata
+  pdftoolbar=true,        % show Acrobat’s toolbar?
+  pdfmenubar=true,        % show Acrobat’s menu?
+  pdffitwindow=false,     % window fit to page when opened
+  pdfstartview={FitH},    % fits the width of the page to the window
+  pdftitle={},            % title
+  pdfauthor={Maciuś},     % author
+  pdfsubject={Subject},   % subject of the document
+  pdfcreator={Creator},   % creator of the document
+  pdfproducer={Producer}, % producer of the document
+  pdfkeywords={keyword1} {key2} {key3}, % list of keywords
+  pdfnewwindow=true,      % links in new window
+  linktoc=page,           % Ustawienie linków dla bibliografi (none, all, page, section)
+  colorlinks=true,        % false: boxed links; true: colored links
+  linkcolor=wine,         % color of internal links (change box color with linkbordercolor)
+  citecolor=grass-green,  % color of links to bibliography
+  filecolor=magenta,      % color of file links
+  urlcolor=ocean-blue,    % color of external links
+}
+
+%---------------------------------------------------------------------------
+% Definicje własnych, nowych makr
+%---------------------------------------------------------------------------
+
+% poniższe makra wymagają pakietu 'xcolor'
+\newcommand{\red}[1]{ {\color{RedOrange}{#1}} }
+\newcommand{\yellow}[1]{ {\color{Dandelion}{#1}} }
+\newcommand{\green}[1]{ {\color{LimeGreen}{#1}} }
+\newcommand{\RED}[1]{ {\colorbox{RedOrange}{#1}} }
+\newcommand{\YELLOW}[1]{ {\colorbox{Dandelion}{#1}} }
+\newcommand{\GREEN}[1]{ {\colorbox{LimeGreen}{#1}} }
+
+
+%---------------------------------------------------------------------------
+
+\begin{document}
+\bibliographystyle{abbrv}
+
+\titlepages
+
+% ---------------------- Streszczenie ----------------------
+\begin{abstract}
+Dokument prezentuje podstawowe zasady składu tekstu w~systemie \LaTeX{} z~wyszczególnieniem zastosowania nomenklatury języka do tworzenia rozdziałów, sekcji oraz podsekcji charakterystycznych dla prac dyplomowych. \\
+Zestawiono w nim wyłącznie praktyczne przykłady użycia różnego rodzaju obiektów, w~tym tabel, rysunków, wzorów matematycznych wraz z~,,dobrymi praktykami'' ułatwiającymi stworzenie estetycznych dokumentów oraz późniejszą efektywną pracę z nimi. \\
+\end{abstract}
+
+\tableofcontents
+\clearpage
+
+\include{cha_1_chapter_one}
+\include{cha_2_chapter_two}
+\include{cha_3_chapter_three}
+
+
+
+
+
+% itd.
+% \appendix
+% \include{dodatekA}
+% \include{dodatekB}
+% itd.
+
+
+\bibliography{bibliografia}
+%\begin{thebibliography}{1}
+%
+%\bibitem{Dil00}
+%A.~Diller.
+%\newblock {\em LaTeX wiersz po wierszu}.
+%\newblock Wydawnictwo Helion, Gliwice, 2000.
+%
+%\bibitem{Lam92}
+%L.~Lamport.
+%\newblock {\em LaTeX system przygotowywania dokumentów}.
+%\newblock Wydawnictwo Ariel, Krakow, 1992.
+%
+%\bibitem{Alvis2011}
+%M.~Szpyrka.
+%\newblock {\em {On Line Alvis Manual}}.
+%\newblock AGH University of Science and Technology, 2011.cccccc
+%\newblock \\\texttt{http://fm.ia.agh.edu.pl/alvis:manual}.
+%
+%\end{thebibliography}
+
+\end{document}
