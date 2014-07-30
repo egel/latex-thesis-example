@@ -1,0 +1,167 @@
+\chapter{Wstępu słów kilka}
+\label{cha:wstepu_slow_kilka}
+
+
+%------------------------------------------------------------------------------
+\section{Tekst}
+\label{sec:tekst}
+\LaTeX{} zapewnia autorowi doskonałe narzędzie w~zarządzaniu tworzonym dokumentem z wyszczególnieniem numerowania sekcji, wypunktowań oraz odwołań do tabel, rysunków, wzorów oraz~wielu innych elementów. \\
+Przykładowo w~bardzo prosty sposób możemy odwołać się do wzoru \ref{eq:rownowaznosc_masy_i_energii} umieszczonego w~kolejnym podrozdziale zatytułowanym \nameref{sec:matematyka}.
+
+Pisząc dokument nie trzeba się również martwić o wygląd dokumentu --- \LaTeX{} wyręczy w~tym pisarza --- natomiast autor może skupić całą swoją uwagę na właściwej treści pracy, bez obawy, że jakiś styl zmieni się przez przypadek podczas pracy z dokumentem jak często ma to miejsce w edytorach WYSIWYG.
+
+
+%------------------------------------------------------------------------------
+\section{Matematyka}
+\label{sec:matematyka}
+Wzory prezentowane poniżej ukazują możliwości \LaTeX{} w~zakresie składu formuł matematycznych. Wzory są numerowane dynamicznie według kolejności, podobnie jak pozostałe elementy o~których mowa w~sekcji~\ref{sec:tekst}.
+
+\begin{equation}
+    \label{eq:rownowaznosc_masy_i_energii}
+    E = mc^2
+\end{equation}
+
+, gdzie
+
+\begin{equation}
+    m = \frac{m_0}{\sqrt{1-\frac{v^2}{c^2}}}.
+\end{equation}
+
+Warto wspomnieć też, że jest możliwość wypisania wzoru w jednej linijce w sposób następujący $f(x) = ax^2 + bx + c$, gdzie $a \ne 0$, lub posłużyć się tą samą notacją tylko z zastosowaniem podwójnego znaku dolara przez co uzyskamy efekt $$f(x) = ax^2 + bx + c$$, gdzie $a \ne 0$. \\
+
+Jak widać przy wzorach pisanych z zastosowaniem pojedynczego i podwójnego znaku dolara nie ma z boku strony numeru referencyjnego do wzoru tworzonego dynamicznie przez \LaTeX{}a, natomiast ulega zmianie układ formatowania.
+
+%------------------------------------------------------------------------------
+\section{Tabele}
+\label{sec:tabele}
+Środowisko \LaTeX{}a zapewnia doskonałe wsparcie do przedstawiania różnego rodzaju informacji w postaci tabel. Począwszy od stosunkowo małych i prostych (tabela~\ref{tab:wyrownanie_wartosci_liczbowych} oraz~\ref{tab:odmiana_slowa_latex}) poprzez te, które swoją objętością mogą rozciągać się na wiele stron (tabela \ref{tab:odmiana_slowa_latex}).
+
+\begin{table}[h]
+\caption{Wyrównanie wartości liczbowych w tabelach}
+\label{tab:wyrownanie_wartosci_liczbowych}
+\centering
+    \begin{tabular}{|l|c|r|r@{.}l|}
+    \hline
+    Do lewej strony & Do środka strony & Do prawej strony & \multicolumn{2}{c|}{Do kropki} \\
+    \hline
+    \hline
+    123.4  & 123.4   & 123.4   & 123 & 4\\
+    12.34  & 12.34   & 12.34   & 12 & 34\\
+    1.234  & 1.234   & 1.234   & 1 & 234\\
+    0.1234 & 0.1234  & 0.1234  & 0 & 1234\\
+    \hline
+    \end{tabular}
+\caption*{Źródło: Opracowanie własne na podstawie, M. Marcin Szpyrka, LaTeX Podstawy użytkowania. Przygotowanie pracy dyplomowej.}
+\end{table}
+
+
+\begin{table}[h]
+\caption{Odmiana słowa \LaTeX ~przez przypadki.}
+\label{tab:odmiana_slowa_latex}
+\centering
+	\begin{tabular}{| l | c | c | c |} \hline
+	\textbf{Przypadek} & \textbf{Pytanie} & \textbf{Żywotny} & \textbf{Nieżywotny} \\ \hline \hline
+	Mianownik    & Kto? Co?        & \multicolumn{2}{c|}{ \tt{LaTeX} } \\ \hline
+	Dopełniacz   & Kogo? Czego?    & \tt{LaTeXa}      & \tt{LaTeXu} \\ \hline
+	Celownik     & Komu? Czemu?    & \multicolumn{2}{c|}{ \tt{LaTeXowi} } \\ \hline
+	Biernik      & Kogo? Co?       & \tt{LaTeXa}      & \tt{LaTeX} \\ \hline
+	Narzędnik    & Z kim? Z czym?  & \multicolumn{2}{c|}{ \tt{LaTeXem} } \\ \hline
+	Miejscownik  & O kim? O czym?  & \multicolumn{2}{c|}{ \tt{LaTeXu} } \\ \hline
+	Wołacz       & O!              & \multicolumn{2}{c|}{ \tt{LaTeXu} } \\ \hline
+	\end{tabular}
+\end{table}
+
+
+\begin{center}
+\begin{longtable}{|l|l|l|}
+\caption{Wielowierszowa tabela}
+\label{tab:multiline_table} \\
+
+\hline \multicolumn{1}{|c|}{\textbf{Time (s)}} & \multicolumn{1}{c|}{\textbf{Triple chosen}} & \multicolumn{1}{c|}{\textbf{Other feasible triples}} \\ \hline
+\endfirsthead
+
+\multicolumn{3}{c}%
+{{\bfseries \tablename\ \thetable{} -- kontynuacja z poprzedniej strony}} \\
+\hline \multicolumn{1}{|c|}{\textbf{Time (s)}} &
+\multicolumn{1}{c|}{\textbf{Triple chosen}} &
+\multicolumn{1}{c|}{\textbf{Other feasible triples}} \\ \hline
+\endhead
+
+\hline \multicolumn{3}{|r|}{{Kontynuacja na następnej stronie}} \\ \hline
+\endfoot
+
+\hline \hline
+\endlastfoot
+
+0 & (1, 11, 13725) & (1, 12, 10980), (1, 13, 8235), (2, 2, 0), (3, 1, 0) \\
+2745 & (1, 12, 10980) & (1, 13, 8235), (2, 2, 0), (2, 3, 0), (3, 1, 0) \\
+5490 & (1, 12, 13725) & (2, 2, 2745), (2, 3, 0), (3, 1, 0) \\
+8235 & (1, 12, 16470) & (1, 13, 13725), (2, 2, 2745), (2, 3, 0), (3, 1, 0) \\
+10980 & (1, 12, 16470) & (1, 13, 13725), (2, 2, 2745), (2, 3, 0), (3, 1, 0) \\
+13725 & (1, 12, 16470) & (1, 13, 13725), (2, 2, 2745), (2, 3, 0), (3, 1, 0) \\
+16470 & (1, 13, 16470) & (2, 2, 2745), (2, 3, 0), (3, 1, 0) \\
+19215 & (1, 12, 16470) & (1, 13, 13725), (2, 2, 2745), (2, 3, 0), (3, 1, 0) \\
+21960 & (1, 12, 16470) & (1, 13, 13725), (2, 2, 2745), (2, 3, 0), (3, 1, 0) \\
+24705 & (1, 12, 16470) & (1, 13, 13725), (2, 2, 2745), (2, 3, 0), (3, 1, 0) \\
+27450 & (1, 12, 16470) & (1, 13, 13725), (2, 2, 2745), (2, 3, 0), (3, 1, 0) \\
+30195 & (2, 2, 2745) & (2, 3, 0), (3, 1, 0) \\
+32940 & (1, 13, 16470) & (2, 2, 2745), (2, 3, 0), (3, 1, 0) \\
+35685 & (1, 13, 13725) & (2, 2, 2745), (2, 3, 0), (3, 1, 0) \\
+38430 & (1, 13, 10980) & (2, 2, 2745), (2, 3, 0), (3, 1, 0) \\
+41175 & (1, 12, 13725) & (1, 13, 10980), (2, 2, 2745), (2, 3, 0), (3, 1, 0) \\
+43920 & (1, 13, 10980) & (2, 2, 2745), (2, 3, 0), (3, 1, 0) \\
+46665 & (2, 2, 2745) & (2, 3, 0), (3, 1, 0) \\
+49410 & (2, 2, 2745) & (2, 3, 0), (3, 1, 0) \\
+52155 & (1, 12, 16470) & (1, 13, 13725), (2, 2, 2745), (2, 3, 0), (3, 1, 0) \\
+54900 & (1, 13, 13725) & (2, 2, 2745), (2, 3, 0), (3, 1, 0) \\
+57645 & (1, 13, 13725) & (2, 2, 2745), (2, 3, 0), (3, 1, 0) \\
+60390 & (1, 12, 13725) & (2, 2, 2745), (2, 3, 0), (3, 1, 0) \\
+63135 & (1, 13, 16470) & (2, 2, 2745), (2, 3, 0), (3, 1, 0) \\
+65880 & (1, 13, 16470) & (2, 2, 2745), (2, 3, 0), (3, 1, 0) \\
+68625 & (2, 2, 2745) & (2, 3, 0), (3, 1, 0) \\
+71370 & (1, 13, 13725) & (2, 2, 2745), (2, 3, 0), (3, 1, 0) \\
+74115 & (1, 12, 13725) & (2, 2, 2745), (2, 3, 0), (3, 1, 0) \\
+76860 & (1, 13, 13725) & (2, 2, 2745), (2, 3, 0), (3, 1, 0) \\
+79605 & (1, 13, 13725) & (2, 2, 2745), (2, 3, 0), (3, 1, 0) \\
+82350 & (1, 12, 13725) & (2, 2, 2745), (2, 3, 0), (3, 1, 0) \\
+85095 & (1, 12, 13725) & (1, 13, 10980), (2, 2, 2745), (2, 3, 0), (3, 1, 0) \\
+87840 & (1, 13, 16470) & (2, 2, 2745), (2, 3, 0), (3, 1, 0) \\
+90585 & (1, 13, 16470) & (2, 2, 2745), (2, 3, 0), (3, 1, 0) \\
+93330 & (1, 13, 13725) & (2, 2, 2745), (2, 3, 0), (3, 1, 0) \\
+96075 & (1, 13, 16470) & (2, 2, 2745), (2, 3, 0), (3, 1, 0) \\
+98820 & (1, 13, 16470) & (2, 2, 2745), (2, 3, 0), (3, 1, 0) \\
+101565 & (1, 13, 13725) & (2, 2, 2745), (2, 3, 0), (3, 1, 0) \\
+104310 & (1, 13, 16470) & (2, 2, 2745), (2, 3, 0), (3, 1, 0) \\
+107055 & (1, 13, 13725) & (2, 2, 2745), (2, 3, 0), (3, 1, 0) \\
+109800 & (1, 13, 13725) & (2, 2, 2745), (2, 3, 0), (3, 1, 0) \\
+112545 & (1, 12, 16470) & (1, 13, 13725), (2, 2, 2745), (2, 3, 0), (3, 1, 0) \\
+115290 & (1, 13, 16470) & (2, 2, 2745), (2, 3, 0), (3, 1, 0) \\
+118035 & (1, 13, 13725) & (2, 2, 2745), (2, 3, 0), (3, 1, 0) \\
+120780 & (1, 13, 16470) & (2, 2, 2745), (2, 3, 0), (3, 1, 0) \\
+123525 & (1, 13, 13725) & (2, 2, 2745), (2, 3, 0), (3, 1, 0) \\
+126270 & (1, 12, 16470) & (1, 13, 13725), (2, 2, 2745), (2, 3, 0), (3, 1, 0) \\
+129015 & (2, 2, 2745) & (2, 3, 0), (3, 1, 0) \\
+131760 & (2, 2, 2745) & (2, 3, 0), (3, 1, 0) \\
+134505 & (1, 13, 16470) & (2, 2, 2745), (2, 3, 0), (3, 1, 0) \\
+137250 & (1, 13, 13725) & (2, 2, 2745), (2, 3, 0), (3, 1, 0) \\
+139995 & (2, 2, 2745) & (2, 3, 0), (3, 1, 0) \\
+142740 & (2, 2, 2745) & (2, 3, 0), (3, 1, 0) \\
+145485 & (1, 12, 16470) & (1, 13, 13725), (2, 2, 2745), (2, 3, 0), (3, 1, 0) \\
+148230 & (2, 2, 2745) & (2, 3, 0), (3, 1, 0) \\
+150975 & (1, 13, 16470) & (2, 2, 2745), (2, 3, 0), (3, 1, 0) \\
+153720 & (1, 12, 13725) & (2, 2, 2745), (2, 3, 0), (3, 1, 0) \\
+156465 & (1, 13, 13725) & (2, 2, 2745), (2, 3, 0), (3, 1, 0) \\
+159210 & (1, 13, 13725) & (2, 2, 2745), (2, 3, 0), (3, 1, 0) \\
+161955 & (1, 13, 16470) & (2, 2, 2745), (2, 3, 0), (3, 1, 0) \\
+164700 & (1, 13, 13725) & (2, 2, 2745), (2, 3, 0), (3, 1, 0) \\
+\end{longtable}
+\end{center}
+
+
+
+%------------------------------------------------------------------------------
+\section{Rysunki}
+\label{sec:rysunki}
+\LaTeX umożliwia także dołączanie do dokumentu fotografii wraz opisem, odowłaniem oraz źródłem tak samo jak w innych pozycjach wymienionych w rozdziale \ref{sec:tekst}.
+
+
