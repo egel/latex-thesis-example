@@ -13,14 +13,6 @@ This basic example of thesis document prepared in LaTeX have been prepared by de
   - Download repository, compile and have great fun;
 
 
-## Maintenance
-Quick command for remove unnecessary files from thesis root folder (linux)
-
-```
-rm *.aux *.log *.toc *.out *.dvi *.bbl *.bcf *.blg *.run.xml *.lof *.gz *.gz\(busy\)
-```
-
-
 ## Basic setup
 
 1. [Install neccesary bibraries like: TeXLive or MikTeX](#installation-of-additional-libs)
@@ -67,8 +59,15 @@ All done, and now you can give a try to become sophisticated LaTeX wizzard :)
 > All document's variables are defined in `document_main.tex` file and have `global` suffix;
 
 
-## Sublime Text project files
-If you not using Sublime Text Editor you can easly remove `uekthesis.sublime-project` file, but it's not necessary. This file has no influence for rest of files, only set up a project for Sublime.
+## Maintenance
+Quick command for remove unnecessary files from thesis root folder (linux)
+```
+rm *.aux *.log *.toc *.out *.dvi *.bbl *.bcf *.blg *.run.xml *.lof *.gz *.gz\(busy\)
+```
+
+
+### Sublime Text project files
+If you not using Sublime Text Editor you can easly remove `thesis.sublime-project` file, but it's not necessary. This file has no influence for rest of files while compiling project. It's only setup file for Sublime's project.
 
 
 ## Bugs, issues or errors
