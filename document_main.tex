@@ -133,7 +133,6 @@
 \lstset{
     %extendedchars=true, % celowo wyłączone
     inputencoding=utf8,
-    %language=[LaTeX]TeX,
     basicstyle=\footnotesize\ttfamily,
     numberstyle=\footnotesize,
     captionpos=t,
@@ -144,7 +143,8 @@
     showtabs=false,
     showspaces=false,
     showstringspaces=false,
-    style=LaTeX2e, % domyślny styl dla listingów = LaTeX2e
+    %language=[LaTeX]TeX,   % domyślny język wyłączony
+    style=LaTeX2e,          % domyślny styl dla listingów = LaTeX2e
     keywordstyle=\color{MidnightBlue},
     commentstyle=\color{OliveGreen},
     stringstyle=\color{Red},
@@ -331,24 +331,38 @@
 \include{chap_2_chapter_two}
 \include{chap_3_chapter_three}
 
-% Spis tabel
-% \clearpage
-% \listoftables
-
-% Spis rysunków
-% \clearpage
-% \listoffigures
-
-% Spis kodów źródłowych
-% \lstlistoflistings
-
-\clearpage
-\printbibliography[heading=bibintoc]
-
 % Załączniki
 % \appendix
 % \include{dodatekA}
 % \include{dodatekB}
 % itd.
+
+%##############################################################################
+% Poniżej odnajdziesz spisy dołączane do dokumentu (w tym do spisu treści). 
+% Jesli nie chcesz wykorszystać któregoś z nich w pracy, zakomentuj go 
+
+% Spis tabel
+\clearpage
+\cleardoublepage
+\phantomsection
+\addcontentsline{toc}{chapter}{\listtablename}
+\listoftables
+
+% Spis rysunków
+\clearpage
+\cleardoublepage
+\phantomsection
+\addcontentsline{toc}{chapter}{\listfigurename}
+\listoffigures
+
+% Spis kodów źródłowych
+\cleardoublepage
+\phantomsection
+\addcontentsline{toc}{chapter}{\lstlistlistingname}
+\lstlistoflistings
+
+% Bibliografia
+\clearpage
+\printbibliography[heading=bibintoc]
 
 \end{document}

@@ -82,13 +82,13 @@
 \RequirePackage[T1]{fontenc}           % Nowy zestaw czcionek
 \RequirePackage{times}                 % Times - Czcionki wektorowe
 \RequirePackage{graphicx}              % Wstawianie grafiki
-\RequirePackage{geometry}              %
+\RequirePackage{geometry}              % Ustawienie odstępów marginesów
 \RequirePackage[usenames]{color}       % Palety kolorów zdefionwanych
 \RequirePackage[dvipsnames]{xcolor}    % Zestaw kolorów
-\RequirePackage{fancyhdr}              %
+\RequirePackage{fancyhdr}              % Tworzy górne/dolne wykończenia strony
 \RequirePackage[hyphens]{url}          % Pakiet url + dzielenie myślników
 \RequirePackage{titlesec}              %
-\RequirePackage{tocloft}               %
+\RequirePackage{tocloft}               % Wspomaga dołączanie treści do spisu treści
 \RequirePackage{amsmath}               % Moduł matematyczny AMS
 \RequirePackage{amsfonts}              % pakiet czcionek AMS
 \RequirePackage{amssymb}               % Symbole matematyczne AMS
