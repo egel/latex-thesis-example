@@ -34,7 +34,7 @@ Jak widać przy wzorach pisanych z zastosowaniem pojedynczego i podwójnego znak
 %------------------------------------------------------------------------------
 \section{Tabele}
 \label{sec:tabele}
-Środowisko \LaTeX{}a zapewnia doskonałe wsparcie do przedstawiania różnego rodzaju informacji w postaci tabel. Począwszy od stosunkowo małych i prostych (tabela~\ref{tab:wyrownanie_wartosci_liczbowych} oraz~\ref{tab:odmiana_slowa_latex}) poprzez te, które swoją objętością mogą rozciągać się na wiele stron (tabela \ref{tab:odmiana_slowa_latex}).
+Środowisko \LaTeX{}a zapewnia doskonałe wsparcie do przedstawiania różnego rodzaju informacji w postaci tabel. Począwszy od stosunkowo małych i prostych (np.: tabela~\ref{tab:wyrownanie_wartosci_liczbowych}) poprzez te, które swoją objętością mogą rozciągać się na wiele stron (tabela \ref{tab:multiline_table}).
 
 \begin{table}[h]
 \caption{Wyrównanie wartości liczbowych w tabelach}
@@ -51,24 +51,7 @@ Jak widać przy wzorach pisanych z zastosowaniem pojedynczego i podwójnego znak
     0.1234 & 0.1234  & 0.1234  & 0 & 1234\\
     \hline
     \end{tabular}
-\caption*{Źródło: Opracowanie własne na podstawie, M. Marcin Szpyrka, LaTeX Podstawy użytkowania. Przygotowanie pracy dyplomowej.}
-\end{table}
-
-
-\begin{table}[h]
-\caption{Odmiana słowa \LaTeX ~przez przypadki.}
-\label{tab:odmiana_slowa_latex}
-\centering
-	\begin{tabular}{| l | c | c | c |} \hline
-	\textbf{Przypadek} & \textbf{Pytanie} & \textbf{Żywotny} & \textbf{Nieżywotny} \\ \hline \hline
-	Mianownik    & Kto? Co?        & \multicolumn{2}{c|}{ \tt{LaTeX} } \\ \hline
-	Dopełniacz   & Kogo? Czego?    & \tt{LaTeXa}      & \tt{LaTeXu} \\ \hline
-	Celownik     & Komu? Czemu?    & \multicolumn{2}{c|}{ \tt{LaTeXowi} } \\ \hline
-	Biernik      & Kogo? Co?       & \tt{LaTeXa}      & \tt{LaTeX} \\ \hline
-	Narzędnik    & Z kim? Z czym?  & \multicolumn{2}{c|}{ \tt{LaTeXem} } \\ \hline
-	Miejscownik  & O kim? O czym?  & \multicolumn{2}{c|}{ \tt{LaTeXu} } \\ \hline
-	Wołacz       & O!              & \multicolumn{2}{c|}{ \tt{LaTeXu} } \\ \hline
-	\end{tabular}
+\caption*{Źródło: Opracowanie własne na podstawie \parencite{man:Szpyrka13}.}
 \end{table}
 
 
@@ -81,7 +64,7 @@ Jak widać przy wzorach pisanych z zastosowaniem pojedynczego i podwójnego znak
 \endfirsthead
 
 \multicolumn{3}{c}%
-{{\bfseries \tablename\ \thetable{} -- kontynuacja z poprzedniej strony}} \\
+{{\tablename\ \thetable{} -- kontynuacja z poprzedniej strony}} \\
 \hline \multicolumn{1}{|c|}{\textbf{Time (s)}} &
 \multicolumn{1}{c|}{\textbf{Triple chosen}} &
 \multicolumn{1}{c|}{\textbf{Other feasible triples}} \\ \hline
@@ -162,6 +145,6 @@ Jak widać przy wzorach pisanych z zastosowaniem pojedynczego i podwójnego znak
 %------------------------------------------------------------------------------
 \section{Rysunki}
 \label{sec:rysunki}
-\LaTeX umożliwia także dołączanie do dokumentu fotografii wraz opisem, odowłaniem oraz źródłem tak samo jak w innych pozycjach wymienionych w rozdziale \ref{sec:tekst}.
+\LaTeX umożliwia także dołączanie do dokumentu fotografii wraz opisem, odwołaniem oraz źródłem tak samo jak w innych obiektach wymienionych w rozdziale \ref{sec:tekst}.
 
 
