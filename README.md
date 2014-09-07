@@ -1,5 +1,5 @@
 # Latex thesis example
-This basic example of thesis document prepared in LaTeX have been prepared by default for my book - Przygotowanie pracy dyplomowej wraz z systemem Latex - but it also could be good example of thesis for my colleagues - students of University of Economics in Cracow.
+This basic example of thesis document for LaTeX have been prepared by default for my book - Przygotowanie pracy dyplomowej wraz z systemem Latex - but it also could be good example of thesis for my colleagues - students of University of Economics in Cracow.
 
 ## Features
 
