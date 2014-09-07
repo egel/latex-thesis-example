@@ -27,7 +27,7 @@ Firstly you need to install La(Tex) libraries --- If you have *TexLive*, *MikTeX
 ##### Linux
 For most linux distributions based on [Debian](https://www.debian.org/) like: (ex: [Ubuntu](http://www.ubuntu.com/), [Mint](http://www.linuxmint.com/), [ElementaryOS](http://elementaryos.org/), etc) you could install **texlive** by run this command in terminal:
 
-    sudo apt-get install texlive-full
+    sudo apt-get install texlive-full biber
 
 **apt-get** program will install whole bunch of *Tex* libs (~1.5GB). It's a lot of stuff and contains more libs then we'll ever use, but the main advantage of this setp is that you probably won't get any errors like missing common libraries while you'll be writting your thesis --- less errors, less worries - simple as that ;)
 
