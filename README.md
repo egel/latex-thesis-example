@@ -36,7 +36,10 @@ You can download [Miktex](http://miktex.org/). It's more-less an equivalent of *
 
 ### <a name="copy-repo"></a>Copy this repository to your hard drive:
 
+    cd ~/Pulpit
     git clone git@github.com:egel/latex-example.git
+
+  or download manualy by clicking `Download` button on the bottom of right sidebar.
 
 ### <a name="compile-document"></a>Compile whole document:
 
@@ -44,6 +47,11 @@ You can download [Miktex](http://miktex.org/). It's more-less an equivalent of *
     $ pdflatex document_main.tex
     $ biber bibliografia.tex
     $ pdflatex document_main.tex
+
+  or use for example some LaTeX editors like **Texmaker** ([texmaker website](http://www.xm1math.net/texmaker/)).
+  It's cross platform editor (Windows, OSX, Linux, OS/2) and has got predefine buttons to compile whole document by one click (default shortcuts: `F1` - quick compile, `F11` - bibliography compile)
+
+  > Note: If you want to compile bibliography according to this project, you need to change default option of Bibtex: `bibtex %.aux` to ``. To be more precise, this step change default, old "bibtex" bibliography compilator to newer "biblatex + biber" for better bibliography management.
 
 ### <a name="become-a-wizzard"></a>Become a wizzard
 All done, and now you can give a try to become sophisticated LaTeX wizzard :)
@@ -62,7 +70,7 @@ All done, and now you can give a try to become sophisticated LaTeX wizzard :)
 ## Maintenance
 Quick command for remove unnecessary files from thesis root folder (linux)
 ```
-rm *.aux *.log *.toc *.out *.dvi *.bbl *.bcf *.blg *.run.xml *.lof *.gz *.gz\(busy\)
+rm *.aux *.log *.lot *.lol *.lof *.toc *.out *.dvi *.bbl *.bcf *.blg *.run.xml *.gz *.gz\(busy\)
 ```
 
 
@@ -70,8 +78,8 @@ rm *.aux *.log *.toc *.out *.dvi *.bbl *.bcf *.blg *.run.xml *.lof *.gz *.gz\(bu
 If you not using Sublime Text Editor you can easly remove `thesis.sublime-project` file, but it's not necessary. This file has no influence for rest of files while compiling project. It's only setup file for Sublime's project.
 
 
-## Bugs, issues or errors
-All things according, please report [here](https://github.com/egel/uek-latex-thesis-example/issues).
+## Enhancements, bugs, questions or errors
+All things according, please report [here](https://github.com/egel/latex-thesis-example/issues).
 
 
 ## License
