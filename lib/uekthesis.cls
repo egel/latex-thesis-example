@@ -12,7 +12,7 @@
 \newif\ifpdflatex\pdflatexfalse
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{lib/uekthesis}[2014/16/12
-    LaTeX class for thesis documents]
+  LaTeX class for thesis documents]
 \DeclareOption{pdflatex}{\pdflatextrue}
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{report}}
 \ProcessOptions\LoadClass[a4paper, 12pt, oneside, openright]{report}
@@ -82,13 +82,13 @@
 \RequirePackage[T1]{fontenc}           % Nowy zestaw czcionek
 \RequirePackage{times}                 % Times - Czcionki wektorowe
 \RequirePackage{graphicx}              % Wstawianie grafiki
-\RequirePackage{geometry}              % Ustawienie odstępów marginesów
+\RequirePackage{geometry}              %
 \RequirePackage[usenames]{color}       % Palety kolorów zdefionwanych
 \RequirePackage[dvipsnames]{xcolor}    % Zestaw kolorów
-\RequirePackage{fancyhdr}              % Tworzy górne/dolne wykończenia strony
+\RequirePackage{fancyhdr}              %
 \RequirePackage[hyphens]{url}          % Pakiet url + dzielenie myślników
 \RequirePackage{titlesec}              %
-\RequirePackage{tocloft}               % Wspomaga dołączanie treści do spisu treści
+\RequirePackage{tocloft}               %
 \RequirePackage{amsmath}               % Moduł matematyczny AMS
 \RequirePackage{amsfonts}              % pakiet czcionek AMS
 \RequirePackage{amssymb}               % Symbole matematyczne AMS
@@ -97,9 +97,8 @@
 \RequirePackage{lmodern}               % Font: modern latin
 \RequirePackage{courier}               % Font: courier
 \RequirePackage{xpatch}                % !!! Required for biblatex settings
-\RequirePackage[polish]{babel}          %
+\RequirePackage[polish]{babel}         %
 \RequirePackage{polski}                %
-
 \RequirePackage{indentfirst}           % uzyskanie wcięcia przy pierwszym akapicie
 \RequirePackage{nameref}               % pakiet referencji do pełnych nazw rozdziałów
 \RequirePackage{enumerate}             % pakiet numerowania 1,2,3...etc
@@ -112,59 +111,110 @@
 \RequirePackage{listings}              % pakiet dla kodów zródłowych
 \RequirePackage{indentfirst}           % uzyskanie wcięcia przy pierwszym akapicie
 \RequirePackage{chngcntr}              % pakiet który definiuje komendy \coun­ter­within oraz \coun­ter­with­out
-\RequirePackage{gensymb}               % pakiet który definiuje znaki m.in. \degree, \textdegree
+\RequirePackage{textcomp, gensymb}     % pakiet który definiuje znaki m.in. \degree, \textdegree
 \RequirePackage{cases}                 % pakiet numeracji równań z 'numcases'
 
 %##############################################################################
-% set geometry for two-side and oneside
-\geometry{lmargin=30mm, rmargin=20mm, tmargin=30mm, bmargin=30mm, foot=10mm, head=10mm}
+% DEFAULT OPTIONS
+  
+  % uekthesis introduction pages counter
+  \newcounter{introPageCounter}
+  \setcounter{introPageCounter}{1}    
+  
+  %###################################################
+  % set geometry for two-side and oneside
+  \geometry{lmargin=30mm, rmargin=20mm, tmargin=30mm, bmargin=30mm, foot=10mm, head=10mm}
 
-%##############################################################################
-% Thesis oneside OPTION
-\DeclareOption{twoside}{
-  \geometry{twoside=true,lmargin=3cm,rmargin=3cm,bindingoffset=0cm}
-}
+  %###################################################
+  % Thesis oneside (Class OPTION)
+  % definiuje dolne i górne wykończenie strony
+  \def\thesisHeaders{  
+    \fancyhf{}
+    \fancyhead{}
+    \fancyhead[L]{\slshape{\small \rightmark}}
+    \fancyhead[R]{\bfseries \thepage}
 
-%##############################################################################
-% set geometry for two-side; later is declaration for oneside
-\linespread{1.3}
+    \fancypagestyle{plain}{%
+      \fancyhf{}                          % clear all header and footer fields
+      \renewcommand{\headrulewidth}{0pt}
+      \renewcommand{\footrulewidth}{0pt}
+    }
+    \fancyfoot[RO]{\small \@globalShortAuthor\quad\textit{\@globalShortTitle}}
+  }
+  
+  %###################################################
+  % set geometry for two-side; later is declaration for oneside
+  \linespread{1.3}
 
-%##############################################################################
-% znak rozpoczynający każdą listę wypunktową
-\renewcommand{\labelitemi}{--}
-
-%##############################################################################
-% definiuje dolne wykończenie strony
-\def\thesisHeaders{
-
-%    \fancypagestyle{plain}{%
-%        \fancyhf{}                          % clear all header and footer fields
-%        \renewcommand{\headrulewidth}{0pt}
-%        \renewcommand{\footrulewidth}{0pt}
-%    }
-    \fancyfoot[LE,RO]{\small \@globalShortAuthor\quad\textit{\@globalShortTitle}}
-}
-
-%##############################################################################
-% Obligatory supervisor
-\def\addSupervisor{
+  %###################################################  
+  % znak rozpoczynający każdą listę wypunktową
+  \renewcommand{\labelitemi}{--}
+  
+  %###################################################  
+  % domyślnie puste
+  \def\addVersion{}
+  \def\addIndexNumber{}
+  \def\statementOfTheAuthor{}
+  
+  %###################################################
+  % Supervisor
+  \def\addSupervisor{
     \begin{flushright}
     pod kierunkiem\quad\\
     \@globalSupervisor\quad
     \end{flushright}
-}
+  }
+  
+  %###################################################
+  % Ustawienia parametrów dla tytułów rozdziałów, podrozdziałów, itd.
+
+  %\titleformat{\chapter}[block]
+  %  {\bfseries\Huge}{\filright \LARGE\thechapter. }{0ex}{}
+
+  % odstępy: lewy, góra, dół
+  \titlespacing{\chapter}{0pt}{17mm}{19mm}
+
+  \titleformat{\section}[block]
+    {\bfseries\Large}{\filright \Large\thesection. }{0ex}{}
+  \titlespacing{\section}{0mm}{8mm plus 0mm minus 1mm}{4mm plus 0mm minus 1mm}
+
+  \titleformat{\subsection}[block]
+    {\bfseries\large}{\filright \large\thesubsection. }{0ex}{}
+  \titlespacing{\subsection}{0mm}{6mm}{2.5mm}
+
+  \titleformat{\subsubsection}[block]
+    {\bfseries\normalsize}{\filright \normalsize\thesubsubsection. }{0ex}{}
+  \titlespacing{\subsubsection}{0mm}{3mm}{1.5mm}
+  
+%########################## END OF DEFAULT OPTIONS ############################
+
+
 
 %##############################################################################
-% Define some options
-\def\addVersion{}
-\def\addIndexNumber{}
+% Thesis twoside (Class OPTION)
+\DeclareOption{twoside}{
+  \geometry{twoside=true,lmargin=3cm,rmargin=3cm,bindingoffset=0cm}
+  
+  \def\thesisHeaders{
+    \fancyhf{}
+    \fancyhead{}
+    \fancyhead[RE,LO]{\slshape{\small \rightmark}}
+    \fancyhead[RO,LE]{\bfseries \thepage}
+    
+    \fancyfoot[LE,RO]{\small \@globalShortAuthor\quad\textit{\@globalShortTitle}}
+  }
+}
 
+
+%##############################################################################
+% File Version (Class OPTION)
 \DeclareOption{fileVersion}{
   \def\addVersion{ / wersja: \@globalFileVersion}
 }
 
+%##############################################################################
+% Student's Index Number (Class OPTION)
 \DeclareOption{indexNumber}{
-  %\def\addIndexNumber{\\[-1mm] Nr. indeksu:  &  {\itshape \@globalIndexNumber}}
   \def\addIndexNumber{
     \begin{center}
     Nr. indeksu:
@@ -173,42 +223,40 @@
   }
 }
 
-%##############################################################################
-% for English
-
-%\DeclareOption{en}{
-%  \def\thesisheaders{
-%    \fancyfoot[LE,RO]{\small \@globalShortAuthor\quad\textit{\@shortTitleEN}}
-%  }
-
-%  \def\thesistable{
-%    \begin{tabular}{p{45mm}l}
-%    Author: & {\itshape \@author}\\[-1mm]
-%    Degree programme: & {\itshape \@globalDegreeprogramme}\\[-1mm]
-%    Supervisor: & {\itshape \@globalSupervisor}\\
-%    \end{tabular}
-%  }
-%}
-
 
 %##############################################################################
-% Statement of the Author
-%##############################################################################
-\def\statementOfTheAuthor{
-    {\large\itshape O\'swiadczam, \'swiadomy odpowiedzialno\'sci karnej za po\'swiadczenie nieprawdy, \.ze \mbox{niniejsz\k{a}} prac\k{e} dyplomow\k{a} wykona\l{}em osobi\'scie i samodzielnie oraz nie korzysta\l{}em ze \'zr\'ode\l{} innych ni\.z wymienione w pracy.}
-}
-
+% Statement of the Author (Class OPTION)
 \DeclareOption{male}{
-  \def\statementOfTheAuthor{
-    {\large\itshape O\'swiadczam, \'swiadomy odpowiedzialno\'sci karnej za po\'swiadczenie nieprawdy, \.ze \mbox{niniejsz\k{a}} prac\k{e} dyplomow\k{a} wykona\l{}em osobi\'scie i samodzielnie oraz nie korzysta\l{}em ze \'zr\'ode\l{} innych ni\.z wymienione w pracy.}
+  \DeclareOption{authorStatement}{
+    \def\statementOfTheAuthor{
+      \titlepage
+      \vspace*{10mm}
+      {\large\itshape O\'swiadczam, \'swiadomy odpowiedzialno\'sci karnej za po\'swiadczenie nieprawdy, \.ze \mbox{niniejsz\k{a}} prac\k{e} dyplomow\k{a} wykona\l{}em osobi\'scie i samodzielnie oraz nie korzysta\l{}em ze \'zr\'ode\l{} innych ni\.z wymienione w pracy.}
+      \vspace{20mm}
+      
+      \hfill \dots\dots\dots\dots\dots\dots\dots\dots\dots\dots\dots\dots\dots\dots
+      \quad\quad\quad
+      \clearpage
+      \addtocounter{introPageCounter}{1} % increased introPageCounter
+    }
   }
-}
+}% END male
 
 \DeclareOption{female}{
-  \def\statementOfTheAuthor{
-    {\large\itshape O\'swiadczam, \'swiadoma odpowiedzialno\'sci karnej za po\'swiadczenie nieprawdy, \.ze \mbox{niniejsz\k{a}} prac\k{e} dyplomow\k{a} wykona\l{}am osobi\'scie i samodzielnie oraz nie korzysta\l{}am ze \'zr\'ode\l{} innych ni\.z wymienione w pracy.}
+  \DeclareOption{authorStatement}{
+    \def\statementOfTheAuthor{
+      \titlepage
+      \vspace*{10mm}
+      {\large\itshape O\'swiadczam, \'swiadoma odpowiedzialno\'sci karnej za po\'swiadczenie nieprawdy, \.ze \mbox{niniejsz\k{a}} prac\k{e} dyplomow\k{a} wykona\l{}am osobi\'scie i samodzielnie oraz nie korzysta\l{}am ze \'zr\'ode\l{} innych ni\.z wymienione w pracy.}
+      \vspace{20mm}
+      
+      \hfill \dots\dots\dots\dots\dots\dots\dots\dots\dots\dots\dots\dots\dots\dots
+      \quad\quad\quad
+      \clearpage
+      \addtocounter{introPageCounter}{1} % increased introPageCounter
+    }
   }
-}
+}% END female
 
 %##############################################################################
 \ProcessOptions
@@ -224,7 +272,7 @@
     }
     \vspace*{15mm}
 
-    \includegraphics[scale=0.1]{university-logo}
+    \includegraphics[width=7cm]{university-logo}
     \vspace*{15mm}
 
     {\LARGE\@globalFullAuthor}
@@ -238,23 +286,15 @@
     \vspace*{10mm}
   \end{center}
 
-  %\noindent {\sffamily \thesistable}
-
   {\large\addSupervisor}
 
   \null
   \vfill
   \centerline{\large{\@globalCity~\@globalYear}}
+  \addtocounter{introPageCounter}{1} % increased introPageCounter
   \clearpage
-
-  \titlepage
-  \vspace*{10mm}
+  
   \statementOfTheAuthor
-
-  \vspace*{20mm}
-  \hfill \dots\dots\dots\dots\dots\dots\dots\dots\dots\dots\dots\dots\dots\dots
-  \quad\quad\quad\quad
-  \clearpage
 
   \titlepage
   \vspace*{15cm} \vfill
@@ -263,24 +303,17 @@
       {\large\itshape \@globalAcknowledgements}
     \end{minipage}
   \end{flushright}
+  \addtocounter{introPageCounter}{1} % increased introPageCounter
   \clearpage
-
-  \setcounter{page}{4}
+  
+  \setcounter{page}{\value{introPageCounter}}
 }
-
 
 \pagestyle{fancy}
 \renewcommand{\chaptermark}[1]{\markboth{\thechapter.\ #1}{}}
 \renewcommand{\sectionmark}[1]{\markright{\thesection.\ #1}}
 \renewcommand{\headrulewidth}{0.2pt}
 \renewcommand{\footrulewidth}{0.2pt}
-\fancyhf{}
-\fancyhead{}
-%\fancyhead[L]{\slshape{\small \rightmark}}
-\fancyhead[RE,LO]{\slshape{\small \rightmark}}
-%\fancyhead[R]{\bfseries \thepage}
-\fancyhead[RO,LE]{\bfseries \thepage}
-
 \thesisHeaders
 
 \frenchspacing
@@ -294,32 +327,7 @@
 \flushbottom
 
 %##############################################################################
-% Ustawienia parametrów dla tytułów rozdziałów, podrozdziałów, itd.
-%##############################################################################
-
-%\titleformat{\chapter}[block]
-%  {\bfseries\Huge}{\filright \LARGE\thechapter. }{0ex}{}
-
-% odstępy: lewy, góra, dół
-\titlespacing{\chapter}{0pt}{17mm}{19mm}
-
-\titleformat{\section}[block]
-  {\bfseries\Large}{\filright \Large\thesection. }{0ex}{}
-\titlespacing{\section}{0mm}{8mm plus 0mm minus 1mm}{4mm plus 0mm minus 1mm}
-
-\titleformat{\subsection}[block]
-  {\bfseries\large}{\filright \large\thesubsection. }{0ex}{}
-\titlespacing{\subsection}{0mm}{6mm}{2.5mm}
-
-\titleformat{\subsubsection}[block]
-  {\bfseries\normalsize}{\filright \normalsize\thesubsubsection. }{0ex}{}
-\titlespacing{\subsubsection}{0mm}{3mm}{1.5mm}
-
-
-%##############################################################################
 % Ustawienia parametrów generowania spisu treści i spisu rysunków
-%##############################################################################
-
 \renewcommand{\cfttoctitlefont}{\bfseries\Large}
 \renewcommand{\cftbeforetoctitleskip}{20mm}
 \renewcommand{\cftaftertoctitleskip}{19mm}
