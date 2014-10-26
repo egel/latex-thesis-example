@@ -43,10 +43,10 @@ You can download [Miktex](http://miktex.org/). It's more-less an equivalent of *
 
 ### <a name="compile-document"></a>Compile whole document:
 
-    $ pdflatex document_main.tex
-    $ pdflatex document_main.tex
+    $ pdflatex main.tex
+    $ pdflatex main.tex
     $ biber bibliografia.tex
-    $ pdflatex document_main.tex
+    $ pdflatex main.tex
 
   or use for example some LaTeX editors like **Texmaker** ([texmaker website](http://www.xm1math.net/texmaker/)).
   It's cross platform editor (Windows, OSX, Linux, OS/2) and has got predefine buttons to compile whole document by one click (default shortcuts: `F1` - quick compile, `F11` - bibliography compile)
@@ -64,7 +64,7 @@ All done, and now you can give a try to become sophisticated LaTeX wizzard :)
   - `male` or `female` - this option sets all setting to men or women preferences (**default**: male);
   - Global font size: `13pt` or `12pt` or `11pt`;
 
-> All document's variables are defined in `document_main.tex` file and have `global` suffix;
+> All document's variables are defined in `main.tex` file and have `global` suffix;
 
 
 ## Maintenance
