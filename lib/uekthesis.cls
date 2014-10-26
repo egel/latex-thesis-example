@@ -7,11 +7,11 @@
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\message{### uekthesis.cls --- ver. 1.0.0 --- Maciej Sypień ###}
+\message{### uekthesis.cls --- ver. 0.1.0 --- Maciej Sypień ###}
 
 \newif\ifpdflatex\pdflatexfalse
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{lib/uekthesis}[2014/16/12
+\ProvidesClass{lib/uekthesis}[2014/26/10
   LaTeX class for thesis documents]
 \DeclareOption{pdflatex}{\pdflatextrue}
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{report}}
