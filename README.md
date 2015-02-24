@@ -64,14 +64,10 @@ All class options can be found in its repository: [uek-latex-thesis-class](https
 
 
 ## Maintenance
-Quick command for remove unnecessary files from thesis root folder (linux)
+Quick command for remove unnecessary files from thesis root folder (for Bash)
 ```
 rm *.aux *.log *.lot *.lol *.lof *.toc *.out *.dvi *.bbl *.bcf *.blg *.run.xml *.gz *.gz\(busy\)
 ```
-
-
-### Sublime Text project files
-If you not using Sublime Text Editor you can easly remove `thesis.sublime-project` file, but it's not necessary. This file has no influence for rest of files while compiling project. It's only setup file for Sublime's project.
 
 
 ## Enhancements, bugs, questions or errors
