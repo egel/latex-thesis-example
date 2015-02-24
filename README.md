@@ -58,11 +58,7 @@ All done, and now you can give a try to become sophisticated LaTeX wizzard :)
 
 
 ## Class options
-
-  - `oneside` or `twoside` print (**default**: twoside);
-  - `addversion` - print version of document into the printout document; This option is defined by `\globalVersion` variable (**default**: off);
-  - `male` or `female` - this option sets all setting to men or women preferences (**default**: male);
-  - Global font size: `13pt` or `12pt` or `11pt`;
+All class options can be found in its repository: [uek-latex-thesis-class](https://github.com/egel/uek-latex-thesis-class).
 
 > All document's variables are defined in `main.tex` file and have `global` suffix;
 
