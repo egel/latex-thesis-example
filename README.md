@@ -48,7 +48,7 @@ You can download [Miktex](http://miktex.org/). It's more-less an equivalent of *
     $ biber bibliografia.tex
     $ pdflatex main.tex
 
-  or use for example some LaTeX editors like **Texmaker** ([texmaker website](http://www.xm1math.net/texmaker/)).
+  or use for example some LaTeX editors like **TexStudio** ([TexStudio website](http://texstudio.sourceforge.net/)).
   It's cross platform editor (Windows, OSX, Linux, OS/2) and has got predefine buttons to compile whole document by one click (default shortcuts: `F1` - quick compile, `F11` - bibliography compile)
 
   > Note: If you want to compile bibliography according to this project, you need to change default option of Bibtex: `bibtex %.aux` to ``. To be more precise, this step change default, old "bibtex" bibliography compilator to newer "biblatex + biber" for better bibliography management.
